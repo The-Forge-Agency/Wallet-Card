@@ -60,6 +60,13 @@ return [
             'report' => false,
         ],
 
+        // Stockage temporaire des .pkpass générés (thenextweb/passgenerator)
+        'passgenerator' => [
+            'driver' => 'local',
+            'root' => storage_path('app/passgenerator'),
+            'throw' => false,
+        ],
+
     ],
 
     /*

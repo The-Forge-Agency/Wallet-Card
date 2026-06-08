@@ -14,8 +14,7 @@
         "laravel/framework": "^13.8",
         "laravel/tinker": "^3.0",
         "livewire/livewire": "^4.0",
-        "simplesoftwareio/simple-qrcode": "^4.2",
-        "thenextweb/passgenerator": "^0.1.2"
+        "simplesoftwareio/simple-qrcode": "^4.2"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
