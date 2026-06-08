@@ -21,8 +21,8 @@
     {{-- ÉTAPE 1 — choix du contenu --}}
     @if ($step === 1)
         <div class="mx-auto max-w-xl text-center">
-            <a href="{{ route('home') }}" wire:navigate class="mb-8 inline-flex items-center gap-2">
-                <img src="{{ asset('images/logo.svg') }}" alt="WalletCard" class="h-10">
+            <a href="{{ route('home') }}" wire:navigate class="mb-8 inline-flex">
+                <x-brand size="h-9" />
             </a>
 
             <h1 class="font-title text-3xl font-bold leading-tight sm:text-4xl">

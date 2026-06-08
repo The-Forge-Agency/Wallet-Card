@@ -42,7 +42,7 @@ class AppleWalletService
         $files = [
             'pass.json' => json_encode($this->definition($card), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE),
         ];
-        foreach (['icon.png', 'icon@2x.png', 'icon@3x.png', 'logo.png'] as $asset) {
+        foreach (['icon.png', 'icon@2x.png', 'icon@3x.png', 'logo.png', 'logo@2x.png', 'logo@3x.png'] as $asset) {
             $files[$asset] = (string) file_get_contents(public_path('images/pass/'.$asset));
         }
         if ($thumbnail = $this->thumbnailFor($card)) {
@@ -255,6 +255,7 @@ class AppleWalletService
             'organizationName' => config('walletcard.organization_name'),
             'serialNumber' => $card->code,
             'description' => 'WalletCard — '.$card->displayTitle(),
+            'logoText' => config('walletcard.organization_name'),
             'backgroundColor' => Color::hexToRgbString($card->bg_color),
             'foregroundColor' => Color::hexToRgbString($card->text_color),
             'labelColor' => Color::hexToRgbString($card->text_color),

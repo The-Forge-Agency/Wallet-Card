@@ -1,6 +1,6 @@
 <x-layouts.app>
     <header class="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-5">
-        <img src="{{ asset('images/logo.svg') }}" alt="WalletCard" class="h-10 sm:h-12">
+        <x-brand size="h-9 sm:h-10" />
         <a href="{{ route('create') }}" wire:navigate
            class="btn-accent hidden px-5 py-2.5 text-sm font-semibold sm:inline-block">Créer ma carte</a>
     </header>
@@ -72,7 +72,7 @@
     </section>
 
     <footer class="mx-auto w-full max-w-6xl px-5 py-10 text-center text-sm text-ink-alt">
-        <img src="{{ asset('images/icon.svg') }}" alt="" class="mx-auto mb-3 h-8 w-8">
+        <img src="{{ asset('images/icon-mark.png') }}" alt="" class="mx-auto mb-3 h-10 w-auto">
         WalletCard — Crée ta carte, mets ce que tu veux, c'est à toi.
     </footer>
 </x-layouts.app>
