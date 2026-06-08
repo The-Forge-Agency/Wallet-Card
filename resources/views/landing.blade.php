@@ -1,6 +1,6 @@
 <x-layouts.app>
     <header class="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-5">
-        <img src="{{ asset('images/logo.svg') }}" alt="WalletCard" class="h-7">
+        <img src="{{ asset('images/logo.svg') }}" alt="WalletCard" class="h-10 sm:h-12">
         <a href="{{ route('create') }}" wire:navigate
            class="btn-accent hidden px-5 py-2.5 text-sm font-semibold sm:inline-block">Créer ma carte</a>
     </header>
