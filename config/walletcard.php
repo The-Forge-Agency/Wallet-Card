@@ -12,7 +12,7 @@ return [
         'issuer_id' => env('GOOGLE_WALLET_ISSUER_ID', ''),
 
         // Chemin du JSON de la clé du compte de service
-        'service_account' => env('GOOGLE_WALLET_SERVICE_ACCOUNT', storage_path('app/certs/google-wallet.json')),
+        'service_account' => env('GOOGLE_WALLET_SERVICE_ACCOUNT') ?: storage_path('app/certs/google-wallet.json'),
 
         // Suffixe de la classe generic (un seul template pour toute l'app)
         'class_suffix' => env('GOOGLE_WALLET_CLASS_SUFFIX', 'walletcard'),
