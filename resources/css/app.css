@@ -2,8 +2,113 @@
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
+@source '../views';
+@source '../../app/Livewire';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --color-bg: #0a0a0f;
+    --color-bg-alt: #16161f;
+    --color-surface: #1d1d28;
+    --color-border: #26262f;
+
+    --color-ink: #f5f5f7;
+    --color-ink-alt: #8e8e9a;
+
+    --color-accent: #dd7ff9;
+    --color-accent-hover: #cf63f4;
+
+    --color-success: #10b981;
+    --color-error: #ef4444;
+
+    --font-title: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+
+    --radius-card: 20px;
+    --radius-btn: 12px;
+    --radius-input: 8px;
+
+    --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.4);
+    --shadow-glow: 0 8px 40px rgba(221, 127, 249, 0.28);
+}
+
+@layer base {
+    html {
+        -webkit-text-size-adjust: 100%;
+    }
+
+    [x-cloak] {
+        display: none !important;
+    }
+
+    body {
+        background-color: var(--color-bg);
+        color: var(--color-ink);
+        font-family: var(--font-body);
+        -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, .font-title {
+        font-family: var(--font-title);
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}
+
+@layer components {
+    /* Halo lavande discret : l'identité visuelle "simple mais pas générique" */
+    .bg-aurora {
+        background-image:
+            radial-gradient(60% 60% at 50% 0%, rgba(221, 127, 249, 0.18) 0%, transparent 60%),
+            radial-gradient(40% 40% at 100% 100%, rgba(221, 127, 249, 0.08) 0%, transparent 70%);
+    }
+
+    .btn-accent {
+        background-color: var(--color-accent);
+        color: #fff;
+        border-radius: var(--radius-btn);
+        transition: transform 0.2s ease-out, background-color 0.2s ease-out;
+    }
+    .btn-accent:hover {
+        background-color: var(--color-accent-hover);
+    }
+    .btn-accent:active {
+        transform: scale(0.97);
+    }
+
+    .field {
+        background-color: var(--color-bg-alt);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-input);
+        color: var(--color-ink);
+        transition: border-color 0.2s ease-out;
+    }
+    .field:focus {
+        outline: none;
+        border-color: var(--color-accent);
+    }
+
+    .is-flipped {
+        transform: rotateY(180deg);
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-14px); }
+    }
+    @keyframes float-slow {
+        0%, 100% { transform: rotate(-8deg) translate(-60px, 0); }
+        50% { transform: rotate(-8deg) translate(-60px, -10px); }
+    }
+    .animate-float { animation: float 5s ease-in-out infinite; }
+    .animate-float-slow { animation: float-slow 7s ease-in-out infinite; }
+
+    @media (prefers-reduced-motion: reduce) {
+        .animate-float, .animate-float-slow { animation: none; }
+    }
 }
